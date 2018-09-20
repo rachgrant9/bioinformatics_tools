@@ -1,4 +1,5 @@
 import json
+import sys
 
 genusscore = open (sys.argv[1], "w")
 with open (sys.argv[2])as blobdb:
