@@ -1,3 +1,4 @@
+#uses the json output of blobtools create to create a file showing the tax,score of selected hits
 import json
 import sys
 
