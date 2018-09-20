@@ -3,11 +3,9 @@ import json
 genusscore = open (sys.argv[1], "w")
 with open (sys.argv[2])as blobdb:
     #load the json from a string to a python format dict
-    parsed_blobdb = json.load(blobdb)
+    parsed_blobdb = json.load(blobdb)  
     
-    #this takes us to the correct level where we have the score and the genus name under tax
-#    genusinfo = parsed_blobdb["dict_of_blobs"]["contig_9"]["taxonomy"]["bestsum"]["genus"]    
-    
+    #loop through json until get to correctly structured nodes
     for contigslist in parsed_blobdb["dict_of_blobs"].items():
         contigstats = contigslist[1]
         #print (contigstats[3])
@@ -16,7 +14,6 @@ with open (sys.argv[2])as blobdb:
                 contigtaxon = tup
                 taxdict = contigtaxon[1]
                 for t in taxdict.items():
-                    #print(t[1])
                     genusinfo = t[1].get("genus")
                     score = str(genusinfo.get("score"))
                     tax = genusinfo.get("tax")
