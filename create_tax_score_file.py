@@ -1,7 +1,7 @@
 import json
 
-genusscore = open ("/Users/rachelgrant/Google Drive/Denver Lab/Blobs/binning_blobs/scoreandgenus.txt", "w")
-with open ("/Users/rachelgrant/Google Drive/Denver Lab/Blobs/binning_blobs/Pp_GH2_blob.json")as blobdb:
+genusscore = open (sys.argv[1], "w")
+with open (sys.argv[2])as blobdb:
     #load the json from a string to a python format dict
     parsed_blobdb = json.load(blobdb)
     
